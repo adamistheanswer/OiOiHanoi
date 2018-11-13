@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- @Author Adam Robinson
+     @Author Tom Creaven  -->
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #7FDBFF;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.ChatController">
+  <center>
+    <SplitPane dividerPositions="0.29797979797979796" BorderPane.alignment="CENTER">
+      <items>
+        <AnchorPane minHeight="0.0" minWidth="0.0">
+          <children>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                  <children>
+                    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                          <children>
+                            <Label text="Online Users :  " />
+                            <Label fx:id="numberOfOnlineUsers" layoutX="10.0" layoutY="10.0" text="No. of" />
+                          </children>
+                        </HBox>
+                        <ListView fx:id="singleUserList" prefHeight="10000.0" />
+
+                      </children>
+                    </VBox>
+                  </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                  <children>
+                    <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <Label fx:id="numberOfOnlineUsers1" text="Notifications Panel" />
+                                       </children>
+                                    </HBox>
+                        <ListView fx:id="notificationsList" prefHeight="600.0" />
+
+                      </children>
+                    </VBox>
+                  </children>
+                </AnchorPane>
+              </items>
+            </SplitPane>
+          </children>
+        </AnchorPane>
+        <AnchorPane minHeight="0.0" minWidth="0.0">
+          <children>
+            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <children>
+
+                <ListView fx:id="chatView" prefHeight="550.0" prefWidth="200.0" />
+
+                <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="100.0" VBox.vgrow="ALWAYS">
+                  <children>
+                    <TextArea fx:id="messageBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="110.0" minWidth="100.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="16.0" prefWidth="698.0" promptText="Enter Message..." scaleShape="false" wrapText="true" HBox.hgrow="ALWAYS">
+                    </TextArea>
+                    <Button fx:id="SendMsg" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="43.0" prefWidth="140.0" scaleShape="false" textAlignment="CENTER" HBox.hgrow="NEVER">
+                      <graphic>
+                        <ImageView fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                            <Image url="@../img/msg.png">
+                            </Image>
+                          </image>
+                        </ImageView>
+                      </graphic></Button>
+                  </children>
+                </HBox>
+              </children>
+            </VBox>
+          </children></AnchorPane>
+      </items>
+    </SplitPane>
+  </center>
+  <top>
+    <BorderPane BorderPane.alignment="CENTER">
+         <left>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+              <ImageView fx:id="avatar" fitHeight="150.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                  <Image url="@../img/Avatar.png" />
+                </image>
+              </ImageView>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+               <children>
+              <ImageView fitHeight="150.0" fitWidth="500.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                <image>
+                  <Image url="@../img/TeamHanoi.png" />
+                </image>
+              </ImageView>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label text="    Signed in as: " textAlignment="CENTER" />
+                        <Label fx:id="username" text="Label" textAlignment="CENTER" />
+                     </children>
+                  </HBox>
+              <HBox alignment="BASELINE_CENTER">
+                <children>
+                  <Label text="Status: " />
+                  <TextField fx:id="statusField" maxWidth="400.0" prefWidth="400.0" />
+                  <Button fx:id="statusButton" mnemonicParsing="false" text="Set Status" />
+                </children>
+              </HBox>
+               </children>
+            </VBox>
+         </center>
+    </BorderPane>
+  </top>
+</BorderPane>
